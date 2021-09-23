@@ -90,6 +90,7 @@ var questions = [
         message: "修改后的文件的路径"
     }
 ];
+
 inquirer.prompt(questions).then(answers => {
     fs.readFile(answers['origin'], 'utf8', (err, oriData) => {
         if (err) {
@@ -105,7 +106,7 @@ inquirer.prompt(questions).then(answers => {
                 oriData = oriData.replace(/[,.;:'"，。；：‘“”’!！]/g, '');
                 modData = modData.replace(/[,.;:'"，。；：‘“”’!！]/g, '');
                 allin = getSimilarity(createSimhash(oriData), createSimhash(modData)).toFixed(2);
-                fs.writeFile('D:/JavaScript-exercise/论文查重系统/result.txt', allin + '\n', { flag: 'a+' },err => {
+                fs.writeFile('D:/JavaScript-exercise/论文查重系统/result.txt', allin + '\n', { flag: 'a+' }, err => {
                     if (err) {
                         console.error(err)
                         return
@@ -115,3 +116,5 @@ inquirer.prompt(questions).then(answers => {
         }
     })
 })
+
+

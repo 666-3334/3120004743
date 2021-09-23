@@ -1,0 +1,14 @@
+{
+  "name": "system",
+  "version": "1.0.0",
+  "description": "check",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "weijie",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^9.1.1"
+  }
+}
